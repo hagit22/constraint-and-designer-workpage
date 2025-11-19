@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך אפליקציית בחירת צבעים</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+        
+        .preparation {
+            background-color: #fff3cd;
+            border-right: 5px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        .preparation h2 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
+        .step {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        .do-box {
+            background-color: #e3f2fd;
+            border-right: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .do-box h3 {
+            margin-top: 0;
+            color: #1976D2;
+            font-size: 1.1em;
+        }
+        
+        .notice-box {
+            background-color: #fff9e6;
+            border-right: 4px solid #FF9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .notice-box h3 {
+            margin-top: 0;
+            color: #F57C00;
+            font-size: 1.1em;
+        }
+        
+        .optional-box {
+            background-color: #f3e5f5;
+            border-right: 4px solid #9C27B0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .optional-box h3 {
+            margin-top: 0;
+            color: #7B1FA2;
+            font-size: 1.1em;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            direction: ltr;
+            display: inline-block;
+        }
+        
+        .code-block {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            direction: ltr;
+            text-align: left;
+            margin: 15px 0;
+        }
+        
+        .code-block code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        ul, ol {
+            margin: 10px 0;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .english {
+            direction: ltr;
+            display: inline-block;
+        }
+        
+        .summary {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .summary h2 {
+            margin-top: 0;
+        }
+        
+        .checkmark {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🎨 מדריך אפליקציית בחירת צבעים</h1>
+    <p>מדריך שלב אחר שלב ליצירת אפליקציה אינטראקטיבית</p>
+</div>
+
+<div class="preparation">
+    <h2>📋 הכנה</h2>
+    <p><strong>הורידו את תמונות הצבעים:</strong></p>
+    <p>הורידו את 6 קבצי התמונה הבאים (קישורים יסופקו):</p>
+    <ul>
+        <li><span class="english">red_circle.png</span></li>
+        <li><span class="english">blue_circle.png</span></li>
+        <li><span class="english">green_circle.png</span></li>
+        <li><span class="english">yellow_circle.png</span></li>
+        <li><span class="english">purple_circle.png</span></li>
+        <li><span class="english">orange_circle.png</span></li>
+    </ul>
+    <p>שמרו אותם במקום שתוכלו למצוא אותם בקלות.</p>
+</div>
+
+<!-- Step 1 -->
+<div class="step">
+    <div class="step-number">שלב 1: צרו פרויקט חדש</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>פתחו את <span class="english">Android Studio</span></li>
+            <li>לחצו על <span class="english">"New Project"</span></li>
+            <li>בחרו <span class="english">"Empty Views Activity"</span></li>
+            <li>תנו לפרויקט שם <span class="english">"ColorPicker"</span></li>
+            <li>לחצו <span class="english">"Finish"</span></li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p>פתחו את <code>activity_main.xml</code> והסתכלו על האלמנט הראשי. ברירת המחדל עבור <span class="english">Empty Views Activity</span> היא <strong><span class="english">ConstraintLayout</span></strong>. זה מה שנעבוד איתו!</p>
+    </div>
+</div>
+
+<!-- Step 2 -->
+<div class="step">
+    <div class="step-number">שלב 2: הוסיפו תמונות לפרויקט</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>ב-<span class="english">Android Studio</span>, מצאו את חלון <span class="english">Project</span> בצד שמאל</li>
+            <li>נווטו אל <code>app > res > drawable</code></li>
+            <li>לחצו לחיצה ימנית על תיקיית <code>drawable</code></li>
+            <li>בחרו <span class="english">"Reveal in Finder"</span> (Mac) או <span class="english">"Show in Explorer"</span> (Windows)</li>
+            <li>העתיקו את כל 6 תמונות העיגולים הצבעוניים לתיקייה הזו</li>
+            <li>חזרו ל-<span class="english">Android Studio</span> - אתם אמורים לראות את התמונות מופיעות בתיקיית <span class="english">drawable</span></li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p>תיקיית <code>drawable</code> היא המקום שבו כל התמונות והגרפיקה של האפליקציה שלכם נמצאים. <span class="english">Android Studio</span> מזהה אותם אוטומטית ועושה אותם זמינים לשימוש.</p>
+    </div>
+</div>
+
+<!-- Step 3 -->
+<div class="step">
+    <div class="step-number">שלב 3: הוסיפו ImageView ראשון</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>פתחו את <code>activity_main.xml</code> במצב <span class="english">Design</span> (לחצו על הלשונית "Design" בחלק העליון)</li>
+            <li>הסתכלו על חלון <strong><span class="english">Palette</span></strong> בצד שמאל</li>
+            <li>לחצו על קטגוריית <span class="english">"Common"</span> (או <span class="english">"Images & Media"</span>)</li>
+            <li>מצאו <strong><span class="english">ImageView</span></strong> ברשימה</li>
+            <li>גררו <span class="english">ImageView</span> אל המסך</li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p>ל-<strong><span class="english">Palette</span></strong> יש שני חלקים:</p>
+        <ul>
+            <li><strong>צד שמאל:</strong> מציג קטגוריות של <span class="english">views</span></li>
+            <li><strong>צד ימין:</strong> מציג <span class="english">views</span> ספציפיים כשאתם בוחרים קטגוריה</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Step 4 -->
+<div class="step">
+    <div class="step-number">שלב 4: הגדירו את מקור התמונה</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>וודאו שה-<span class="english">ImageView</span> שלכם נבחר</li>
+            <li>הסתכלו על חלון <strong><span class="english">Attributes</span></strong> בצד ימין</li>
+            <li>בחלק העליון של חלון <span class="english">Attributes</span>, מצאו את תיבת <strong>החיפוש</strong></li>
+            <li>הקלידו <code>src</code> בתיבת החיפוש</li>
+            <li>מצאו את ה-<span class="english">attribute</span> בשם <code>src</code> ולחצו על התפריט הנפתח</li>
+            <li>בחרו <code>@drawable/red_circle</code></li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p><code>src</code> מייצג את המילה <span class="english">"source"</span> (מקור) - הוא אומר ל-<span class="english">ImageView</span> איפה למצוא את התמונה. הערך <code>@drawable/red_circle</code> אומר "חפש בתיקיית <span class="english">drawable</span> את הקובץ בשם <span class="english">red_circle</span>."</p>
+        <p>תיבת <strong>החיפוש</strong> בחלון <span class="english">Attributes</span> עוזרת לכם למצוא במהירות <span class="english">attributes</span> ספציפיים במקום לגלול דרך מאות אפשרויות. זה חוסך המון זמן!</p>
+    </div>
+</div>
+
+<!-- Step 5 -->
+<div class="step">
+    <div class="step-number">שלב 5: הפכו את ה-ImageView ללחיץ</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>כשה-<span class="english">ImageView</span> עדיין נבחר</li>
+            <li>בתיבת החיפוש של <span class="english">Attributes</span>, הקלידו <code>clickable</code></li>
+            <li>מצאו את ה-<span class="english">attribute</span> בשם <code>clickable</code> והגדירו אותו ל-<code>true</code> (סמנו את התיבה)</li>
+            <li><strong>חשוב:</strong> לחצו על ה-X או כפתור הניקוי כדי <strong>לסגור את החיפוש</strong></li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p><strong>⚠️ תמיד זכרו לסגור את החיפוש כשסיימתם!</strong></p>
+        <p>אם תשכחו לסגור אותו ותחפשו משהו אחר מאוחר יותר, זה לא בהכרח יופיע ותתבלבלו למה אתם לא מוצאים את מה שאתם מחפשים.</p>
+    </div>
+</div>
+
+<!-- Step 6 -->
+<div class="step">
+    <div class="step-number">שלב 6: הוסיפו עוד ImageViews</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>גררו עוד 5 <span class="english">ImageViews</span> אל המסך</li>
+            <li>לכל אחד, הגדירו את ה-<span class="english">attribute</span> <code>src</code> לצבע שונה:
+                <ul>
+                    <li><span class="english">ImageView 2:</span> <code>@drawable/blue_circle</code></li>
+                    <li><span class="english">ImageView 3:</span> <code>@drawable/green_circle</code></li>
+                    <li><span class="english">ImageView 4:</span> <code>@drawable/yellow_circle</code></li>
+                    <li><span class="english">ImageView 5:</span> <code>@drawable/purple_circle</code></li>
+                    <li><span class="english">ImageView 6:</span> <code>@drawable/orange_circle</code></li>
+                </ul>
+            </li>
+            <li>הפכו כל אחד ל-<code>clickable = true</code></li>
+            <li>כשאתם גוררים אותם, נסו למקם אותם בערך ב-2 שורות של 3</li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p>כשאתם גוררים את ה-<span class="english">ImageViews</span> במסך, <strong>קווי עזר</strong> דקים מופיעים באופן זמני. קווים אלה עוזרים לכם:</p>
+        <ul>
+            <li><strong>ליישר</strong> את ה-<span class="english">views</span> שלכם עם <span class="english">views</span> אחרים (יישור קצוות או מרכזים)</li>
+            <li>ליצור <strong>ריווח</strong> אחיד בין <span class="english">views</span></li>
+        </ul>
+        <p>קווי עזר אלה הם מדריכים זמניים - הם נעלמים כשאתם משחררים את ה-<span class="english">view</span>.</p>
+    </div>
+</div>
+
+<!-- Step 7 -->
+<div class="step">
+    <div class="step-number">שלב 7: בחירה מרובה ב-Component Tree</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>הסתכלו על חלון <strong><span class="english">Component Tree</span></strong> (בדרך כלל בצד שמאל, מתחת או ליד ה-<span class="english">Palette</span>)</li>
+            <li>לחצו על ה-<span class="english">ImageView</span> הראשון ב-<span class="english">Component Tree</span></li>
+            <li>החזיקו <strong>Ctrl</strong> (Windows) או <strong>Cmd</strong> (Mac)</li>
+            <li>בזמן שאתם מחזיקים, לחצו על 5 ה-<span class="english">ImageViews</span> האחרים</li>
+            <li>כל 6 אמורים להיות מודגשים/נבחרים עכשיו</li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p>ה-<strong><span class="english">Component Tree</span></strong> מציג את הפריסה שלכם כהיררכיה. הרבה יותר קל ואמין לבחור מספר <span class="english">views</span> כאן מאשר לנסות ללחוץ עליהם ב-<span class="english">canvas</span> של ה-<span class="english">Designer</span>.</p>
+        <p><strong>זו אחת הטריקים השימושיים ביותר לעבודה יעילה!</strong></p>
+    </div>
+</div>
+
+<!-- Step 8 -->
+<div class="step">
+    <div class="step-number">שלב 8: יישרו את ה-ImageViews</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>כשכל 6 ה-<span class="english">ImageViews</span> עדיין נבחרים, הסתכלו על סרגל הכלים בחלק העליון של ה-<span class="english">Designer</span></li>
+            <li>אתם אמורים לראות אייקוני יישור חדשים שהופיעו</li>
+            <li>לחצו על האייקון <strong><span class="english">"Align horizontally"</span></strong> (או <strong><span class="english">"Align tops"</span></strong> - התנסו באפשרויות יישור שונות)</li>
+            <li>ראו איך ה-<span class="english">views</span> מתיישרים!</li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p>כשאתם בוחרים מספר <span class="english">views</span>, <strong>סרגל כלים מיוחד</strong> מופיע עם כלי יישור וחלוקה.</p>
+        <p>הכלים האלה מופיעים <strong>רק</strong> כאשר מספר <span class="english">views</span> נבחרים!</p>
+    </div>
+</div>
+
+<!-- Step 9 -->
+<div class="step">
+    <div class="step-number">שלב 9: חלקו באופן שווה</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>ודאו שה-6 <span class="english">ImageViews</span> שלכם עדיין נבחרים</li>
+            <li>באותו סרגל כלים, מצאו את האייקון <strong><span class="english">"Distribute horizontally"</span></strong> או <strong><span class="english">"Distribute vertically"</span></strong></li>
+            <li>לחצו עליו כדי ליצור ריווח שווה בין ה-<span class="english">views</span> שלכם</li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p>כלי ה-<strong><span class="english">Distribute</span></strong> יוצר ריווח אחיד לחלוטין בין <span class="english">views</span> באופן מיידי.</p>
+        <p>זה שימושי במיוחד עבור פריסות כמו רשתות, לוחות כפתורים, או כל עיצוב שבו אתם רוצים ריווח עקבי. בלי הכלי הזה, הייתם צריכים להתאים ידנית את ה-<span class="english">margins</span> עבור כל <span class="english">view</span>!</p>
+    </div>
+</div>
+
+<!-- Step 10 -->
+<div class="step">
+    <div class="step-number">שלב 10: Infer Constraints</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>לחצו איפשהו על הרקע כדי לבטל את הבחירה של ה-<span class="english">ImageViews</span></li>
+            <li>הסתכלו על סרגל הכלים של <span class="english">Designer</span> בחלק העליון</li>
+            <li>מצאו ולחצו על האייקון <strong><span class="english">"Infer Constraints"</span></strong> (נראה כמו שרביט קסמים עם קווים)</li>
+            <li>צפו כשקווי <span class="english">constraint</span> מופיעים ומחברים את ה-<span class="english">views</span> שלכם!</li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p><strong><span class="english">Infer Constraints</span></strong> הוא אחד הכלים החזקים ביותר של <span class="english">ConstraintLayout</span>!</p>
+        <p>הוא יוצר אוטומטית <span class="english">constraints</span> על בסיס מיקומי ה-<span class="english">views</span> הנוכחיים שלכם. זה חוסך לכם מליצור ידנית כל <span class="english">constraint</span> בנפרד.</p>
+        <p>ממש לידו, תראו את האייקון <strong><span class="english">"Clear All Constraints"</span></strong>. זה מסיר את כל ה-<span class="english">constraints</span> אם אתם צריכים להתחיל מחדש.</p>
+    </div>
+    
+    <div class="optional-box">
+        <h3>🎯 שלב אופציונלי:</h3>
+        <p>נסו ללחוץ על <span class="english">"Clear All Constraints"</span> - צפו איך כל קווי ה-<span class="english">constraint</span> נעלמים!</p>
+        <p>ואז לחצו שוב על <span class="english">"Infer Constraints"</span> כדי ליצור אותם מחדש. זה מראה לכם כמה קל להתנסות ולאתחל.</p>
+    </div>
+</div>
+
+<!-- Step 11 -->
+<div class="step">
+    <div class="step-number">שלב 11: בדקו את ה-XML</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>בחלק העליון של העורך, לחצו על לשונית <strong><span class="english">"Code"</span></strong> (ליד "Design" ו-"Split")</li>
+            <li>הסתכלו על קוד ה-XML של ה-<span class="english">ImageViews</span> שלכם</li>
+            <li>מצאו את ה-<span class="english">constraint attributes</span> - הם מתחילים עם <code>layout_constraint</code></li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p>כל <span class="english">constraint attribute</span> מחבר קצה אחד של ה-<span class="english">view</span> שלכם לקצה של <span class="english">view</span> אחר (או של ה-<span class="english">parent</span>).</p>
+        <p><strong>לדוגמה:</strong> <code>layout_constraintTop_toBottomOf="@id/imageView2"</code> אומר "חבר את הקצה העליון שלי לקצה התחתון של <span class="english">imageView2</span>."</p>
+        
+        <p style="margin-top: 15px;"><strong>ה-<span class="english">constraint attributes</span> העיקריים:</strong></p>
+        <ul>
+            <li><code>layout_constraintTop_toTopOf</code> - מחבר את הקצה העליון לחלק העליון של <span class="english">view</span> אחר</li>
+            <li><code>layout_constraintTop_toBottomOf</code> - מחבר את הקצה העליון לחלק התחתון של <span class="english">view</span> אחר</li>
+            <li><code>layout_constraintBottom_toTopOf</code> - מחבר את הקצה התחתון לחלק העליון של <span class="english">view</span> אחר</li>
+            <li><code>layout_constraintBottom_toBottomOf</code> - מחבר את הקצה התחתון לחלק התחתון של <span class="english">view</span> אחר</li>
+            <li><code>layout_constraintStart_toStartOf</code> - מחבר את הקצה ההתחלתי לתחילה של <span class="english">view</span> אחר</li>
+            <li><code>layout_constraintStart_toEndOf</code> - מחבר את הקצה ההתחלתי לסוף של <span class="english">view</span> אחר</li>
+            <li><code>layout_constraintEnd_toStartOf</code> - מחבר את הקצה הסופי לתחילה של <span class="english">view</span> אחר</li>
+            <li><code>layout_constraintEnd_toEndOf</code> - מחבר את הקצה הסופי לסוף של <span class="english">view</span> אחר</li>
+        </ul>
+        
+        <p style="margin-top: 15px;"><strong>שימו לב גם:</strong> ה-<span class="english">Designer</span> מייצר XML, אבל הוא לא תמיד שם <span class="english">attributes</span> בסדר הגיוני או עקבי. ה-<span class="english">attributes</span> עשויים להיות מעורבבים או מפוזרים. זה</p>
+    </div>
+    
+    <div class="optional-box">
+        <h3>🎯 אופציונלי (מתקדם):</h3>
+        <p>אם אתם רוצים לשמור על ה-XML שלכם מסודר ומאורגן, אתם יכולים לסדר מחדש ידנית את שורות ה- <span class="english">XML</span> כדי לקבץ אותם בצורה הגיונית (כל ה-<span class="english">constraints</span> ביחד, כל ה-<span class="english">sizing attributes</span> ביחד וכו').</p>
+        <p>זה לא נדרש, אבל חלק מהמפתחים מעדיפים XML מאורגן.</p>
+    </div>
+</div>
+
+<!-- Step 12 -->
+<div class="step">
+    <div class="step-number">שלב 12: הוסיפו קוד Java</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>פתחו את <code>MainActivity.java</code></li>
+            <li>הוסיפו את הקוד הבא בתוך מתודת <code>onCreate</code>, אחרי <code>setContentView</code>:</li>
+        </ol>
+        
+        <div class="code-block">
+<code>// Find all ImageViews
+ImageView redCircle = findViewById(R.id.imageView);  // Adjust IDs as needed
+ImageView blueCircle = findViewById(R.id.imageView2);
+ImageView greenCircle = findViewById(R.id.imageView3);
+ImageView yellowCircle = findViewById(R.id.imageView4);
+ImageView purpleCircle = findViewById(R.id.imageView5);
+ImageView orangeCircle = findViewById(R.id.imageView6);
+
+// Get the main layout
+ConstraintLayout mainLayout = findViewById(R.id.main);
+
+// Set click listeners
+redCircle.setOnClickListener(v -> mainLayout.setBackgroundColor(Color.RED));
+blueCircle.setOnClickListener(v -> mainLayout.setBackgroundColor(Color.BLUE));
+greenCircle.setOnClickListener(v -> mainLayout.setBackgroundColor(Color.GREEN));
+yellowCircle.setOnClickListener(v -> mainLayout.setBackgroundColor(Color.YELLOW));
+purpleCircle.setOnClickListener(v -> mainLayout.setBackgroundColor(Color.parseColor("#800080")));
+orangeCircle.setOnClickListener(v -> mainLayout.setBackgroundColor(Color.parseColor("#FFA500")));</code>
+        </div>
+        
+        <ol start="3">
+            <li>ודאו שאתם מוסיפים את ה-<span class="english">imports</span> האלה בחלק העליון של הקובץ:</li>
+        </ol>
+        
+        <div class="code-block">
+<code>import android.graphics.Color;
+import android.widget.ImageView;
+import androidx.constraintlayout.widget.ConstraintLayout;</code>
+        </div>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p>ייתכן שתצטרכו להתאים את ה-IDs של ה-<span class="english">ImageView</span> (<code>imageView</code>, <code>imageView2</code> וכו') כדי להתאים למה ש-<span class="english">Android Studio</span> יצר עבור ה-<span class="english">views</span> שלכם.</p>
+        <p>בדקו ב-XML כדי לראות את ערכי ה-<code>android:id</code> המדויקים.</p>
+    </div>
+</div>
+
+<!-- Step 13 -->
+<div class="step">
+    <div class="step-number">שלב 13: הריצו את האפליקציה!</div>
+    
+    <div class="do-box">
+        <h3>✏️ עשו:</h3>
+        <ol>
+            <li>לחצו על כפתור <span class="english">"Run"</span> הירוק (אייקון play) בחלק העליון של <span class="english">Android Studio</span></li>
+            <li>בחרו את האמולטור או המכשיר המחובר שלכם</li>
+            <li>חכו שהאפליקציה תיבנה ותותקן</li>
+            <li>נסו ללחוץ על כל עיגול צבעוני!</li>
+        </ol>
+    </div>
+    
+    <div class="notice-box">
+        <h3>💡 שימו לב:</h3>
+        <p><strong>🎉 בניתם אפליקציה עובדת!</strong></p>
+        <p>יצרתם ממשק משתמש, הגדרתם <span class="english">constraints</span> ל-<span class="english">views</span>, והוספתם פונקציונליות אינטראקטיבית.</p>
+        <p>זוהי דוגמא ל מחזור שלם של פיתוח <span class="english">Android</span>.</p>
+    </div>
+</div>
+
+<!-- Summary -->
+<div class="summary">
+    <h2>✅ מה למדתם</h2>
+    <p><span class="checkmark">✓</span> איך להשתמש ב-<strong><span class="english">Palette</span></strong> כדי להוסיף <span class="english">views</span></p>
+    <p><span class="checkmark">✓</span> איך להשתמש בחיפוש ב-<strong><span class="english">Attributes</span></strong> כדי למצוא <span class="english">properties</span> במהירות</p>
+    <p><span class="checkmark">✓</span> איך להשתמש ב-<strong><span class="english">Component Tree</span></strong> לבחירה מרובה</p>
+    <p><span class="checkmark">✓</span> איך <strong>קווי עזר ליישור</strong> מנחים את הפריסה שלכם</p>
+    <p><span class="checkmark">✓</span> איך להשתמש בכלי <strong><span class="english">Align</span></strong> ו-<strong><span class="english">Distribute</span></strong> לפריסות מושלמות</p>
+    <p><span class="checkmark">✓</span> איך <strong><span class="english">Infer Constraints</span></strong> יוצר אוטומטית <span class="english">constraints</span></p>
+    <p><span class="checkmark">✓</span> מהם ה-<strong><span class="english">constraint attributes</span></strong> העיקריים</p>
+    <p><span class="checkmark">✓</span> איך לחבר קוד <span class="english">Java</span> ל-<span class="english">views</span> ב-XML</p>
+    <p><span class="checkmark">✓</span> איך לבנות אפליקציית <span class="english">Android</span> שלמה ועובדת!</p>
+    <p style="margin-top: 20px; font-size: 1.3em; text-align: center;"><strong>🎉 כל הכבוד! 🎉</strong></p>
+</div>
+
+<div style="text-align: center; padding: 30px 20px 20px 20px; margin-top: 40px; border-top: 2px solid #e0e0e0; color: #777; font-size: 0.85em; line-height: 1.8;">
+    <p style="margin: 5px 0;">© כל הזכויות שמורות</p>
+    <p style="margin: 5px 0;">חומר זה הוכן עבור תלמידי כיתה י"א | פיתוח אנדרואיד</p>
+    <p style="margin: 5px 0;">מורה: חגית ידוב | שנה"ל 2025-2026</p>
+</div>
+
+</body>
+</html>
